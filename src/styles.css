@@ -1,0 +1,257 @@
+:root {
+    --blue: 79, 125, 243;
+    --pale-blue: hsl(223, 100%, 88%);
+    --very-dark-blue: hsl(209, 33%, 12%);
+    --gray: hsl(0, 0%, 59%);
+    --light-red: hsl(354, 100%, 66%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: "Libre Franklin", sans-serif;
+}
+
+/* Main app */
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 85%;
+    max-width: 725px;
+    margin: 0 auto;
+    padding: 100px 0 75px;
+}
+
+@media (min-width: 768px) {
+    #root {
+        padding: 65px 0;
+    }
+}
+
+.enterprise-logo {
+    margin-bottom: 50px;
+}
+
+.page-article {
+    display: grid;
+    gap: 15px;
+
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.page-article > * {
+    margin: 0;
+
+    font-weight: 300;
+}
+
+.page-article__title {
+    font-size: 28px;
+    color: var(--gray);
+}
+
+@media (min-width: 768px) {
+    .page-article__title {
+        font-size: 40px;
+    }
+}
+
+.page-article__title > b {
+    color: var(--very-dark-blue);
+}
+
+.page-article__subtitle {
+    font-size: 18px;
+    color: var(--very-dark-blue);
+}
+
+.page-form {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    margin-bottom: 75px;
+}
+
+@media (min-width: 768px) {
+    .page-form {
+        flex-direction: row;
+    }
+}
+
+.page-form__input-container {
+    display: grid;
+    gap: 7.5px;
+
+    margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    .page-form__input-container {
+        width: 70%;
+        margin-bottom: 0;
+        margin-right: 15px;
+    }
+}
+
+.email-error,
+.email-success {
+    margin-bottom: 35px;
+}
+
+@media (min-width: 768px) {
+    .email-error,
+    .email-success {
+        margin-bottom: 0;
+    }
+}
+
+.page-form__input {
+    border: 1px var(--pale-blue) solid;
+
+    width: 100%;
+}
+
+.page-form__input::placeholder {
+    color: var(--gray);
+}
+
+.page-form__input:focus {
+    outline: none;
+}
+
+.email-error > .page-form__input {
+    border: 2px solid var(--light-red);
+}
+
+.email-success > .page-form__input {
+    border: 2px solid rgb(3, 126, 3);
+}
+
+.page-form__button {
+    font-weight: 600;
+    border-style: none;
+    background-color: rgba(var(--blue), 1);
+    box-shadow: 0px 7px 12px -3px rgba(79, 125, 243, 0.5);
+    color: white;
+    cursor: pointer;
+
+    transition: background-color 0.5s ease;
+}
+
+@media (min-width: 768px) {
+    .page-form__button {
+        flex-grow: 1;
+
+        height: min-content;
+    }
+}
+
+.page-form__button:hover {
+    background-color: rgba(var(--blue), 0.85);
+}
+
+.page-form__input,
+.page-form__button {
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 16px;
+    border-radius: 25px;
+
+    padding: 15px 30px;
+}
+
+.page-form__input-container__message {
+    display: none;
+
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .page-form__input-container__message {
+        padding: 0 5%;
+
+        text-align: left;
+    }
+}
+
+.email-error > .page-form__input-container__message {
+    color: var(--light-red);
+}
+
+.email-success > .page-form__input-container__message {
+    color: rgb(3, 126, 3);
+}
+
+.email-error > .page-form__input-container__message,
+.email-success > .page-form__input-container__message {
+    display: initial;
+}
+
+.page-dashboard-image {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.page-footer {
+    display: grid;
+    gap: 35px;
+
+    width: 100%;
+    text-align: center;
+}
+
+.page-footer__social {
+    justify-self: center;
+
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.page-footer__social-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+
+    border-radius: 50px;
+    border: 1px solid var(--pale-blue);
+    cursor: pointer;
+
+    transition: all 0.3s ease-out;
+}
+
+.page-footer__social-image-container > * {
+    width: 20px;
+    height: 20px;
+}
+
+.page-footer__social-image-container path {
+    fill: rgb(var(--blue));
+}
+
+.page-footer__social-image-container:hover {
+    border: white 1px solid;
+    background-color: rgb(var(--blue));
+}
+
+.page-footer__social-image-container:hover path {
+    fill: white;
+}
+
+.page-footer__credits {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--gray);
+}
